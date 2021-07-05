@@ -1,0 +1,36 @@
+@use '../../../styles/variables.scss' as variables;
+
+$form-width: 400px;
+
+.c-login {
+  width: 100vw;
+  height: 100vh;
+  min-width: 100vw;
+  min-height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  background-color: variables.$background-color-1;
+
+  &__form {
+    background-color: white;
+    width: $form-width;
+    border-radius: variables.$default-border-radius-1;
+    box-shadow: variables.$default-box-shadow-1;
+
+    &--image {
+      width: 100%;
+    }
+
+    &--subtitle {
+      color: variables.$lead-color;
+    }
+  }
+}
+
+@media (max-width: $form-width) {
+  .c-login {
+    &__form {
+      width: 100vw;
+    }
+  }
+}

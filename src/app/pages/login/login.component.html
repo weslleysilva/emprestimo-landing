@@ -1,1 +1,63 @@
-<section class="container mx-auto">Teste</section>
+<section
+  class="
+    c-login
+    container
+    mx-auto
+    d-flex
+    justify-content-center
+    align-items-center
+  "
+>
+  <form class="c-login__form px-4 px-md-5 py-3 py-md-4">
+    <div class="px-5 py-4 d-flex justify-content-center">
+      <img
+        class="c-login__form--image"
+        src="../../../assets/undraw-transfer-money-2.svg"
+      />
+    </div>
+    <div class="c-login__form--title text-left mt-2 mt-md-5">
+      <h3>Seja bem vindo(a)!</h3>
+    </div>
+    <fieldset class="p-0">
+      <small class="c-login__form--subtitle">
+        Informe suas credenciais de acesso para entrar no sistema.
+      </small>
+      <!-- Input de email -->
+      <div class="mt-3 mt-md-5">
+        <label for="email" class="lead-color mb-2">E-mail</label>
+        <nb-form-field>
+          <nb-icon nbPrefix icon="email-outline" pack="eva"></nb-icon>
+          <input
+            nbInput
+            name="email"
+            type="email"
+            placeholder="ex.: email@provedor.com"
+          />
+        </nb-form-field>
+      </div>
+      <!-- Input de senha -->
+      <div class="mt-3">
+        <label for="password" class="lead-color mb-2">Senha</label>
+        <nb-form-field>
+          <nb-icon nbPrefix icon="lock-outline" pack="eva"></nb-icon>
+          <input
+            nbInput
+            name="password"
+            type="password"
+            placeholder="ex.: ******"
+          />
+        </nb-form-field>
+      </div>
+      <div class="mt-4">
+        <button nbButton class="w-100" status="primary" type="submit">
+          Acessar
+        </button>
+      </div>
+      <div class="mt-2 mb-4">
+        <button nbButton ghost status="primary" class="w-100" type="button">
+          Esqueci minha senha
+        </button>
+      </div>
+    </fieldset>
+  </form>
+</section>

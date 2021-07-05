@@ -1,0 +1,18 @@
+@use './variables.scss' as variables;
+@import "~@nebular/theme/styles/theming";
+@import "~@nebular/theme/styles/themes/default";
+
+$nb-themes: nb-register-theme(
+  (
+    color-primary-default: variables.$primary-color,
+    color-primary-default-border: variables.$primary-color,
+    color-primary-hover: variables.$primary-color-hover,
+    color-primary-hover-border: variables.$primary-color-hover,
+    color-primary-focus: variables.$primary-color-focus,
+    color-primary-focus-border: variables.$primary-color-focus,
+    color-primary-active: variables.$primary-color-focus,
+    color-primary-active-border: variables.$primary-color-focus,
+  ),
+  default,
+  default
+);
