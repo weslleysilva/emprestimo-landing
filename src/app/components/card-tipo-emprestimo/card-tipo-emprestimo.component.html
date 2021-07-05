@@ -1,0 +1,21 @@
+<div class="c-loan-type-card">
+  <app-card>
+    <div
+      *ngIf="image"
+      class="c-loan-type-card__image d-flex justify-content-center"
+    >
+      <img [src]="image" [alt]="title" width="100%" />
+    </div>
+    <h6 class="mt-5 mb-3">
+      <strong>
+        {{ title }}
+      </strong>
+    </h6>
+    <p class="gray-color">
+      {{ subtitle }}
+    </p>
+    <div class="c-loan-type-card__action mt-5">
+      <button nbButton status="primary" class="w-100">Selecionar</button>
+    </div>
+  </app-card>
+</div>

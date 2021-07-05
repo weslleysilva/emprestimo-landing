@@ -10,8 +10,21 @@ h3 {
   font-weight: 800;
 }
 
+h5,
+h6 {
+  font-weight: 500 !important;
+}
+
 .lead-color {
-  color: variables.$lead-color;
+  color: variables.$lead-color !important;
+}
+
+.gray-color {
+  color: variables.$gray-color !important;
+}
+
+.section-with-navbar {
+  margin-top: 76px !important;
 }
 
 @media (max-width: 500px) {

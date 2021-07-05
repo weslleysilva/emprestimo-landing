@@ -1,0 +1,7 @@
+@use '../../../styles/variables.scss' as variables;
+
+.c-card {
+  background-color: white;
+  box-shadow: variables.$default-box-shadow-1;
+  border-radius: variables.$default-border-radius-1;
+}

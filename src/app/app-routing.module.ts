@@ -7,6 +7,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./pages/login/login.module').then((m) => m.LoginModule),
   },
+  {
+    path: 'selecionar-tipo-emprestimo',
+    loadChildren: () =>
+      import(
+        './pages/selecao-tipo-emprestimo/selecao-tipo-emprestimo.module'
+      ).then((m) => m.SelecaoTipoEmprestimoModule),
+  },
 ];
 
 @NgModule({

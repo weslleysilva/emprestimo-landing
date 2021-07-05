@@ -1,0 +1,9 @@
+@use './variables.scss' as variables;
+
+.nb-theme-default nb-layout .layout {
+  background-color: variables.$background-color-1 !important;
+}
+
+.nb-theme-default nb-layout-header nav {
+  box-shadow: variables.$default-box-shadow-1 !important;
+}

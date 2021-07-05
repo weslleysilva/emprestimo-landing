@@ -6,6 +6,7 @@ import { NbButtonModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { NavbarModule } from './components/navbar/navbar.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +18,7 @@ import { AppComponent } from './app.component';
     NbLayoutModule,
     NbButtonModule,
     NbEvaIconsModule,
+    NavbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
