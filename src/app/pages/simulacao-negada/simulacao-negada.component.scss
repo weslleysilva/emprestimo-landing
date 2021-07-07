@@ -1,0 +1,7 @@
+@use '../../../styles/variables.scss' as variables;
+
+.c-simulation-denied {
+  &__content {
+    height: calc(100vh - #{variables.$navbar-height});
+  }
+}

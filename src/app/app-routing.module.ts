@@ -20,9 +20,23 @@ const routes: Routes = [
       ).then((m) => m.SelecaoTipoEmprestimoModule),
   },
   {
+    path: 'simulacao-negada',
+    loadChildren: () =>
+      import('./pages/simulacao-negada/simulacao-negada.module').then(
+        (m) => m.SimulacaoNegadaModule
+      ),
+  },
+  {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),
+  },
+  {
+    path: 'simulacao-negada',
+    loadChildren: () =>
+      import('./pages/simulacao-negada/simulacao-negada.module').then(
+        (m) => m.SimulacaoNegadaModule
+      ),
   },
 ];
 
