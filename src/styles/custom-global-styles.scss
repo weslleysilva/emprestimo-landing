@@ -24,7 +24,7 @@ h6 {
 }
 
 .section-with-navbar {
-  margin-top: 76px !important;
+  margin-top: variables.$navbar-height !important;
 }
 
 @media (max-width: 500px) {
