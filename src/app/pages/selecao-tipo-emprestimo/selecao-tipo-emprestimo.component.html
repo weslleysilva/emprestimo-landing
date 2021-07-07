@@ -1,7 +1,14 @@
 <app-navbar></app-navbar>
-<section class="c-loan-type section-with-navbar container mx-auto py-4">
+<section class="c-loan-type section-with-navbar container mx-auto p-4">
   <div class="c-loan-type__actions">
-    <button nbButton ghost status="primary" nbTooltip="Voltar">
+    <button
+      nbButton
+      ghost
+      status="primary"
+      nbTooltip="Voltar"
+      type="button"
+      (click)="goToBackPage()"
+    >
       <nb-icon icon="arrow-ios-back-outline" pack="eva"></nb-icon>
     </button>
   </div>

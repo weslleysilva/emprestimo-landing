@@ -1,5 +1,5 @@
 @use './variables.scss' as variables;
 
 .nb-theme-default nb-layout-header nav {
-  box-shadow: variables.$default-box-shadow-1 !important;
+  box-shadow: unset !important;
 }

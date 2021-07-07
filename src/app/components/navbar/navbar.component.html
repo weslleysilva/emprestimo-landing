@@ -1,36 +1,46 @@
 <nb-layout-header fixed class="c-navbar">
-  <div class="c-navbar__container container mx-auto">
+  <div class="c-navbar__container container mx-auto px-4">
     <div class="row">
       <div class="c-navbar__container--left col-6 py-3">
         <a [routerLink]="['/']">
           <img src="../../../assets/logo.png" alt="logo" height="100%" />
         </a>
       </div>
-      <div
-        class="
-          c-navbar__container--right
-          col-6
-          d-flex
-          justify-content-end
-          align-items-center
-        "
-      >
-        <button nbButton ghost class="mx-2" status="basic">
-          Sobre a Elleve
-        </button>
-        <button nbButton ghost class="mx-2" status="basic">Ajuda</button>
-        <button nbButton class="mx-2" status="basic" [routerLink]="['/login']">
-          <nb-icon icon="log-in-outline"></nb-icon>Entrar
-        </button>
-        <button
-          nbButton
-          class="mx-2"
-          status="warning"
-          [routerLink]="['/selecionar-tipo-emprestimo']"
+      <div class="c-navbar__container--right col-6">
+        <!-- Mobile Actions -->
+        <div
+          class="d-flex d-lg-none justify-content-end align-items-center h-100"
         >
-          <nb-icon icon="options-2-outline"></nb-icon>
-          Simular empréstimo
-        </button>
+          <button nbButton ghost [nbContextMenu]="mobileActions">
+            <nb-icon icon="menu-outline"></nb-icon>
+          </button>
+        </div>
+        <!-- Desktop Actions -->
+        <div
+          class="d-none d-lg-flex justify-content-end align-items-center h-100"
+        >
+          <button nbButton ghost class="mx-2" status="basic">
+            Sobre a Elleve
+          </button>
+          <button nbButton ghost class="mx-2" status="basic">Ajuda</button>
+          <button
+            nbButton
+            class="mx-2"
+            status="basic"
+            [routerLink]="['/login']"
+          >
+            <nb-icon icon="log-in-outline"></nb-icon>Entrar
+          </button>
+          <button
+            nbButton
+            class="mx-2"
+            status="warning"
+            [routerLink]="['/selecionar-tipo-emprestimo']"
+          >
+            <nb-icon icon="options-2-outline"></nb-icon>
+            Simular empréstimo
+          </button>
+        </div>
       </div>
     </div>
   </div>

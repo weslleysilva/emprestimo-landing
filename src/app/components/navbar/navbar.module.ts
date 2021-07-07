@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { NbButtonModule, NbIconModule, NbLayoutModule } from '@nebular/theme';
+import { NbButtonModule, NbContextMenuModule, NbIconModule, NbLayoutModule } from '@nebular/theme';
 
 import { NavbarComponent } from './navbar.component';
 
@@ -13,6 +13,7 @@ import { NavbarComponent } from './navbar.component';
     RouterModule,
     NbButtonModule,
     NbIconModule,
+    NbContextMenuModule,
   ],
   exports: [NavbarComponent],
 })
