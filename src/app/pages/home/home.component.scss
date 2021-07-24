@@ -1,0 +1,17 @@
+.c-home {
+  background-image: linear-gradient(
+    #edca49,
+    #ecca44,
+    #eac63e,
+    #e5c135,
+    #dcb623
+  );
+  &__main {
+    &--title-container {
+    }
+
+    &--img {
+      width: 100%;
+    }
+  }
+}
