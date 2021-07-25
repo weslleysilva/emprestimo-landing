@@ -1,3 +1,6 @@
+import {
+    CardTipoEmprestimoModule
+} from 'app/components/card-tipo-emprestimo/card-tipo-emprestimo.module';
 import { NavbarModule } from 'app/components/navbar/navbar.module';
 
 import { CommonModule } from '@angular/common';
@@ -16,6 +19,7 @@ import { HomeComponent } from './home.component';
     NavbarModule,
     NbButtonModule,
     RouterModule,
+    CardTipoEmprestimoModule,
   ],
 })
 export class HomeModule {}

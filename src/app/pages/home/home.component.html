@@ -1,40 +1,145 @@
 <app-navbar></app-navbar>
 <div class="c-home section-with-navbar">
-  <section class="c-home__main container mx-auto px-4">
-    <div class="row">
-      <div class="col-12 col-lg-6">
-        <img
-          class="c-home__main--img"
-          src="../../../assets/stock-6-removebg-preview.png"
-          alt="empréstimo"
-        />
+  <!-- Primeira seção -->
+  <section class="c-home__main">
+    <div class="container mx-auto px-4 py-0 h-100">
+      <div class="row h-100">
+        <!-- Imagem -->
+        <div class="col-12 col-lg-6 h-100">
+          <img
+            class="c-home__main--img"
+            src="../../../assets/stock-4.png"
+            alt="empréstimo"
+          />
+        </div>
+        <!-- Título -->
+        <div
+          class="
+            col-12 col-lg-6
+            py-4
+            c-home__main--title-container
+            d-flex
+            flex-wrap
+            align-items-center
+          "
+        >
+          <div class="glassmorphism-card-1 py-4 px-4">
+            <h1 class="mb-3 mt-0">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </h1>
+            <h6 class="lead-color">
+              Quod, adipisci quas, accusantium doloremque deserunt pariatur
+              explicabo sed provident ipsa ipsam maxime nemo unde voluptates
+              fugiat ullam nam praesentium quae enim.
+            </h6>
+            <button
+              nbButton
+              class="mt-5"
+              status="primary"
+              size="giant"
+              [routerLink]="['/selecionar-tipo-emprestimo']"
+            >
+              Simular Agora
+            </button>
+          </div>
+        </div>
       </div>
-      <div
-        class="
-          col-12 col-lg-6
-          py-4
-          c-home__main--title-container
-          d-flex
-          flex-wrap
-          align-items-center
-        "
-      >
-        <div>
-          <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
-          <h6 class="lead-color">
-            Quod, adipisci quas, accusantium doloremque deserunt pariatur
-            explicabo sed provident ipsa ipsam maxime nemo unde voluptates
-            fugiat ullam nam praesentium quae enim.
-          </h6>
-          <button
-            nbButton
-            class="mt-5"
-            status="primary"
-            size="giant"
-            [routerLink]="['/selecionar-tipo-emprestimo']"
+    </div>
+  </section>
+  <!-- Segunda seção -->
+  <section class="c-home__loan-type">
+    <div class="container mx-auto px-4 py-5">
+      <div class="row">
+        <div class="col-12">
+          <div class="c-home__loan-type--title text-center">
+            <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div
+            class="
+              c-home__loan-type--options
+              py-4
+              d-flex
+              justify-content-center
+              flex-wrap
+            "
           >
-            Simular Agora
-          </button>
+            <app-card-tipo-emprestimo
+              class="m-3"
+              title="Tipo de empréstimo 1"
+              subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              image="../../../assets/undraw-transfer-money.svg"
+            ></app-card-tipo-emprestimo>
+            <app-card-tipo-emprestimo
+              class="m-3"
+              title="Tipo de empréstimo 2"
+              subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              image="../../../assets/undraw-transfer-money-3.svg"
+            ></app-card-tipo-emprestimo>
+            <app-card-tipo-emprestimo
+              class="m-3"
+              title="Tipo de empréstimo 3"
+              subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              image="../../../assets/undraw-transfer-money-4.svg"
+            ></app-card-tipo-emprestimo>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Última seção-->
+  <section class="c-home__about">
+    <div class="container mx-auto px-4 py-5">
+      <div class="row py-4 with-divider c-home__about--links">
+        <div class="col-4">
+          <h6 class="mb-3"><strong>Empréstimo</strong></h6>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-3"><strong>Sobre Nós</strong></h6>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+        </div>
+        <div class="col-4">
+          <h6 class="mb-3"><strong>Ajuda</strong></h6>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+          <p class="lead-color">Lorem ipsum</p>
+        </div>
+      </div>
+      <div class="row c-home__about--info py-4">
+        <div class="col-12">
+          <p class="lead-color">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. In saepe
+            cumque est ipsam tempore illo impedit porro sint harum, numquam quia
+            molestiae eveniet distinctio dignissimos nobis exercitationem
+            repudiandae autem debitis.
+          </p>
+          <p class="lead-color">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. In saepe
+            cumque est ipsam tempore illo impedit porro sint harum, numquam quia
+            molestiae eveniet distinctio dignissimos nobis exercitationem
+            repudiandae autem debitis.
+          </p>
+        </div>
+      </div>
+      <div class="row c-home__about--social-media py-3">
+        <div class="col-12 d-flex justify-content-end">
+          <img
+            class="mx-2"
+            src="../../../assets/instagram.png"
+            alt="Instagram"
+          />
+          <img class="mx-2" src="../../../assets/facebook.png" alt="Facebook" />
         </div>
       </div>
     </div>
