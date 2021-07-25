@@ -24,6 +24,20 @@
   &__loan-type {
   }
 
+  &__quotes {
+    background-color: variables.$primary-color;
+
+    &--card {
+      height: 100%;
+    }
+
+    &--people-img {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+    }
+  }
+
   &__about {
     background-color: white;
   }
