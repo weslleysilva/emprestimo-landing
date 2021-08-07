@@ -4,6 +4,7 @@
   scroll-behavior: smooth;
 
   &__main {
+    position: relative;
     background-image: linear-gradient(
       #edca49,
       #ecca44,
@@ -13,7 +14,31 @@
     );
     height: calc(100vh - #{variables.$navbar-height});
 
-    &--title-container {
+    &--waves {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 150px;
+        transform: rotateY(180deg);
+      }
+
+      .shape-fill {
+        fill: #edf1f7;
+      }
+    }
+
+    &--title {
+      font-weight: 700;
+      font-size: 3rem;
     }
 
     &--img {
@@ -25,6 +50,7 @@
   }
 
   &__quotes {
+    position: relative;
     background-color: variables.$text-basic-color;
 
     &--card {
@@ -35,6 +61,49 @@
       width: 100px;
       height: 100px;
       background-color: white;
+    }
+
+    &--waves-top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 100px;
+        transform: rotateY(180deg);
+      }
+
+      .shape-fill {
+        fill: #edf1f7;
+      }
+    }
+
+    &--waves-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+
+      svg {
+        position: relative;
+        display: block;
+        width: calc(177% + 1.3px);
+        height: 100px;
+        transform: rotateY(180deg);
+      }
+
+      .shape-fill {
+        fill: white;
+      }
     }
   }
 
