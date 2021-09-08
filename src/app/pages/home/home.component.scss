@@ -14,28 +14,6 @@
     );
     height: calc(100vh - #{variables.$navbar-height});
 
-    &--waves {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-      transform: rotate(180deg);
-
-      svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 150px;
-        transform: rotateY(180deg);
-      }
-
-      .shape-fill {
-        fill: #edf1f7;
-      }
-    }
-
     &--title {
       font-weight: 700;
       font-size: 3rem;
@@ -51,7 +29,8 @@
 
   &__quotes {
     position: relative;
-    background-color: variables.$text-basic-color;
+    color: variables.$text-basic-color;
+    background-color: white;
 
     &--card {
       height: 100%;
@@ -60,7 +39,6 @@
     &--people-img {
       width: 100px;
       height: 100px;
-      background-color: white;
     }
 
     &--waves-top {
@@ -83,32 +61,9 @@
         fill: #edf1f7;
       }
     }
-
-    &--waves-bottom {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      overflow: hidden;
-      line-height: 0;
-      transform: rotate(180deg);
-
-      svg {
-        position: relative;
-        display: block;
-        width: calc(177% + 1.3px);
-        height: 100px;
-        transform: rotateY(180deg);
-      }
-
-      .shape-fill {
-        fill: white;
-      }
-    }
   }
 
   &__about {
-    background-color: white;
   }
 }
 

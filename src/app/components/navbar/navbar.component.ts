@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
 import { NbMenuItem } from '@nebular/theme';
 
 @Component({
@@ -8,6 +13,7 @@ import { NbMenuItem } from '@nebular/theme';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent implements OnInit {
+  @Input() fixed: boolean = true;
   mobileActions: NbMenuItem[] = [
     { title: 'Sobre a Elleve' },
     { title: 'Ajuda' },
