@@ -38,6 +38,11 @@ const routes: Routes = [
         (m) => m.SimulacaoNegadaModule
       ),
   },
+  {
+    path: 'cadastro',
+    loadChildren: () =>
+      import('./pages/cadastro/cadastro.module').then((m) => m.CadastroModule),
+  },
 ];
 
 @NgModule({

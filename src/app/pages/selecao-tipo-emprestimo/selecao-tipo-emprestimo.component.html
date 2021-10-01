@@ -1,55 +1,64 @@
 <app-navbar></app-navbar>
 <section class="c-loan-type section-with-fixed-navbar container mx-auto p-4">
-  <div class="c-loan-type__actions">
-    <button
-      nbButton
-      ghost
-      status="primary"
-      nbTooltip="Voltar"
-      type="button"
-      (click)="goToBackPage()"
+  <div class="row">
+    <div class="c-loan-type__actions col-12 p-0">
+      <button
+        nbButton
+        ghost
+        status="primary"
+        nbTooltip="Voltar"
+        type="button"
+        (click)="goToBackPage()"
+      >
+        <nb-icon icon="arrow-ios-back-outline" pack="eva"></nb-icon>
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="c-loan-type__title col-12">
+      <h1 class="mb-1">
+        Agora, nos informe qual tipo de empréstimo você está precisando.
+      </h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="c-loan-type__subtitle col-12">
+      <h6 class="lead-color">
+        Selecione abaixo o tipo de empréstimo que mais adequa a sua necessidade
+        atual.
+      </h6>
+    </div>
+  </div>
+  <div class="row">
+    <div
+      class="
+        c-loan-type__options
+        my-5
+        py-4
+        d-flex
+        justify-content-center
+        flex-wrap
+        col-12
+      "
     >
-      <nb-icon icon="arrow-ios-back-outline" pack="eva"></nb-icon>
-    </button>
-  </div>
-  <div class="c-loan-type__title">
-    <h1 class="mb-1">
-      Agora, nos informe qual tipo de empréstimo você está precisando.
-    </h1>
-  </div>
-  <div class="c-loan-type__subtitle">
-    <h6 class="lead-color">
-      Selecione abaixo o tipo de empréstimo que mais adequa a sua necessidade
-      atual.
-    </h6>
-  </div>
-  <div
-    class="
-      c-loan-type__options
-      my-5
-      py-4
-      d-flex
-      justify-content-center
-      flex-wrap
-    "
-  >
-    <app-card-tipo-emprestimo
-      class="m-3"
-      title="Tipo de empréstimo 1"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      image="../../../assets/undraw-transfer-money.svg"
-    ></app-card-tipo-emprestimo>
-    <app-card-tipo-emprestimo
-      class="m-3"
-      title="Tipo de empréstimo 2"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      image="../../../assets/undraw-transfer-money-3.svg"
-    ></app-card-tipo-emprestimo>
-    <app-card-tipo-emprestimo
-      class="m-3"
-      title="Tipo de empréstimo 3"
-      subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-      image="../../../assets/undraw-transfer-money-4.svg"
-    ></app-card-tipo-emprestimo>
+      <app-card-tipo-emprestimo
+        class="m-3"
+        title="Tipo de empréstimo 1"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        image="../../../assets/undraw-transfer-money.svg"
+      ></app-card-tipo-emprestimo>
+      <app-card-tipo-emprestimo
+        class="m-3"
+        title="Tipo de empréstimo 2"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        image="../../../assets/undraw-transfer-money-3.svg"
+      ></app-card-tipo-emprestimo>
+      <app-card-tipo-emprestimo
+        class="m-3"
+        title="Tipo de empréstimo 3"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        image="../../../assets/undraw-transfer-money-4.svg"
+      ></app-card-tipo-emprestimo>
+    </div>
   </div>
 </section>
