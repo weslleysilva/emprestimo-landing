@@ -8,17 +8,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./cadastro.component.scss'],
 })
 export class CadastroComponent implements OnInit {
-  firstCreateAccountForm?: FormGroup;
-  secondCreateAccountForm?: FormGroup;
+  initialDataForm?: FormGroup;
+  consultInitialDataForm?: FormGroup;
+  showPassword: boolean;
   constructor(private _location: Location, private fb: FormBuilder) {
-    this.initFirstCreateAccoutForm();
-    this.initSecondCreateAccountForm();
+    this.showPassword = false;
+    this.initializeInitialDataForm();
+    this.initializeConsultInitialDataForm();
   }
 
   ngOnInit(): void {}
 
-  initFirstCreateAccoutForm() {
-    this.firstCreateAccountForm = this.fb.group({
+  initializeInitialDataForm() {
+    this.initialDataForm = this.fb.group({
       email: [null, [Validators.required, Validators.email]],
       emailConfirm: [null, [Validators.required]],
       phone: [null, [Validators.required]],
@@ -28,13 +30,24 @@ export class CadastroComponent implements OnInit {
     });
   }
 
-  initSecondCreateAccountForm() {
-    this.secondCreateAccountForm = this.fb.group({
+  initializeConsultInitialDataForm() {
+    this.consultInitialDataForm = this.fb.group({
       cpf: [null, [Validators.required]],
       fullName: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(8)]],
     });
+  }
+
+  getCurrentPasswordInputType() {
+    if (this.showPassword) {
+      return 'text';
+    }
+    return 'password';
+  }
+
+  toggleShowPassword() {
+    this.showPassword = !this.showPassword;
   }
 
   goToBackPage() {

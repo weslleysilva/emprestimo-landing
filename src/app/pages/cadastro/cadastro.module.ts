@@ -6,16 +6,21 @@ import { CadastroComponent } from './cadastro.component';
 import { NavbarModule } from 'app/components/navbar/navbar.module';
 import {
   NbButtonModule,
+  NbCardModule,
+  NbFormFieldModule,
   NbIconModule,
   NbInputModule,
   NbStepperModule,
   NbTooltipModule,
 } from '@nebular/theme';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [CadastroComponent],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     CadastroRoutingModule,
     NavbarModule,
     NbIconModule,
@@ -23,6 +28,8 @@ import {
     NbInputModule,
     NbTooltipModule,
     NbStepperModule,
+    NbCardModule,
+    NbFormFieldModule,
   ],
 })
 export class CadastroModule {}
