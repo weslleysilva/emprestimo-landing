@@ -35,21 +35,43 @@
     <nb-card class="col-12 p-4">
       <nb-card-body>
         <nb-stepper linear disableStepNavigation orientation="horizontal">
-          <nb-step
-            *ngIf="initialDataForm"
-            label="Dados iniciais"
-            [stepControl]="ngInitialDataForm"
-          >
+          <nb-step *ngIf="initialDataForm" label="Dados iniciais">
             <form
               #ngInitialDataForm="ngForm"
               [formGroup]="initialDataForm"
               class="c-create-account__form row"
             >
-              <h6 class="col-12 mx-2 mb-4">
-                <strong>Dados iniciais para cadastro</strong>
-              </h6>
-              <fieldset class="col-12 d-flex flex-wrap">
-                <div class="form-group col-12 col-lg-3 px-2 my-2">
+              <!-- Image -->
+              <div
+                class="
+                  col-12 col-lg-7
+                  p-4
+                  d-flex
+                  justify-content-center
+                  aligm-items-center
+                "
+              >
+                <img
+                  class="c-create-account__form--image"
+                  src="../../../assets/undraw-register-6.svg"
+                  alt="Cadastro"
+                />
+              </div>
+              <!-- Fieldset-->
+              <fieldset class="col-12 col-lg-5 d-flex flex-wrap">
+                <div class="col-12 px-2 my-2">
+                  <strong>Já possui cadastro?</strong>
+                </div>
+                <div class="col-12 px-2 my-2">
+                  <button nbButton type="button" routerLink="/login">
+                    Fazer login
+                    <nb-icon icon="log-in-outline"></nb-icon>
+                  </button>
+                </div>
+                <div class="col-12 px-2 mt-4 mb-2">
+                  <strong>Ainda não é cadastrado?</strong>
+                </div>
+                <div class="form-group col-12 px-2 my-2">
                   <label for="email">E-mail*:</label>
                   <nb-form-field>
                     <input
@@ -59,9 +81,10 @@
                       id="email"
                       formControlName="email"
                       autocomplete="off"
-                  /></nb-form-field>
+                    />
+                  </nb-form-field>
                 </div>
-                <div class="form-group col-12 col-lg-3 px-2 my-2">
+                <div class="form-group col-12 px-2 my-2">
                   <label for="emailConfirm">Confirme seu e-mail*:</label>
                   <nb-form-field>
                     <input
@@ -71,9 +94,10 @@
                       id="emailConfirm"
                       formControlName="emailConfirm"
                       autocomplete="off"
-                  /></nb-form-field>
+                    />
+                  </nb-form-field>
                 </div>
-                <div class="form-group col-12 col-lg-3 px-2 my-2">
+                <div class="form-group col-12 px-2 my-2">
                   <label for="phone">Celular*:</label>
                   <nb-form-field>
                     <input
@@ -81,11 +105,13 @@
                       fullWidth
                       type="text"
                       id="phone"
+                      mask="(00) 0 0000-0000"
                       formControlName="phone"
                       autocomplete="off"
-                  /></nb-form-field>
+                    />
+                  </nb-form-field>
                 </div>
-                <div class="form-group col-12 col-lg-3 px-2 my-2">
+                <div class="form-group col-12 px-2 my-2">
                   <label for="password">Senha*:</label>
                   <nb-form-field>
                     <input
@@ -110,15 +136,70 @@
                         [attr.aria-label]="
                           showPassword ? 'hide password' : 'show password'
                         "
-                      >
-                      </nb-icon>
+                      ></nb-icon>
                     </button>
                   </nb-form-field>
                 </div>
-              </fieldset></form
-          ></nb-step>
-          <nb-step label="Consulta dos dados"> </nb-step>
-          <nb-step label="Resultado"> </nb-step></nb-stepper></nb-card-body
-    ></nb-card>
+                <div class="form-group col-12 px-2 mt-3">
+                  <nb-checkbox
+                    id="canReceiveEmail"
+                    formControlName="canReceiveEmail"
+                  >
+                    Gostaria de receber comunicados da Elleve
+                  </nb-checkbox>
+                </div>
+                <div class="form-group col-12 px-2 mt-2">
+                  <nb-checkbox
+                    id="acceptedTerms"
+                    formControlName="acceptedTerms"
+                  >
+                    Li e aceito os
+                    <a>termos de uso</a>
+                    e
+                    <a>política de privacidade</a>
+                    .
+                  </nb-checkbox>
+                </div>
+              </fieldset>
+              <div class="form-group col-12 mt-5 d-flex justify-content-end">
+                <button nbButton type="submit" status="primary" nbStepperNext>
+                  Efetivar Cadastro
+                  <nb-icon icon="arrow-forward-outline"></nb-icon>
+                </button>
+              </div>
+            </form>
+          </nb-step>
+          <nb-step label="Consulta dos dados">
+            <form #ngConsultDataForm="ngForm" class="c-consult-data__form row">
+              <!-- Image -->
+              <div
+                class="
+                  col-12 col-lg-7
+                  p-4
+                  d-flex
+                  justify-content-center
+                  aligm-items-center
+                "
+              >
+                <img
+                  class="c-create-account__form--image"
+                  src="../../../assets/undraw-register-6.svg"
+                  alt="Cadastro"
+                />
+              </div>
+              <!-- Fieldset-->
+              <fieldset class="col-12 col-lg-5 d-flex flex-wrap"></fieldset>
+              <div class="form-group col-12 mt-5 d-flex justify-content-end">
+                <button nbButton type="submit" status="primary" nbStepperNext>
+                  Realizar Consulta
+                  <nb-icon icon="arrow-forward-outline"></nb-icon>
+                </button>
+              </div>
+            </form>
+          </nb-step>
+          <nb-step label="Resultado"></nb-step>
+        </nb-stepper>
+      </nb-card-body>
+    </nb-card>
   </div>
 </section>

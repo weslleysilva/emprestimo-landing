@@ -7,6 +7,7 @@ import { NavbarModule } from 'app/components/navbar/navbar.module';
 import {
   NbButtonModule,
   NbCardModule,
+  NbCheckboxModule,
   NbFormFieldModule,
   NbIconModule,
   NbInputModule,
@@ -14,6 +15,7 @@ import {
   NbTooltipModule,
 } from '@nebular/theme';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [CadastroComponent],
@@ -30,6 +32,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NbStepperModule,
     NbCardModule,
     NbFormFieldModule,
+    NbCheckboxModule,
+    NgxMaskModule.forRoot(),
   ],
 })
 export class CadastroModule {}
