@@ -11,3 +11,19 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .c-consult-data {
+    &__initial-form {
+      &--image {
+        width: 185px;
+      }
+    }
+
+    &__consult-form {
+      &--image {
+        width: 150px;
+      }
+    }
+  }
+}
