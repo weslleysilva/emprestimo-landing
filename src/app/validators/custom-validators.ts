@@ -1,7 +1,7 @@
-import { AbstractControl } from "@angular/forms";
+import { AbstractControl, ValidationErrors } from "@angular/forms";
 
 export class CustomValidators {
-  static CPF(controle: AbstractControl) {
+  static CPF(controle: AbstractControl): ValidationErrors | null {
     const cpf = controle.value;
 
     let soma: number = 0;
@@ -44,16 +44,23 @@ export class CustomValidators {
 
     if (valido) return null;
 
-    return { cpfInvalido: true };
+    controle.setErrors({ ...controle.errors, invalidCPF: true });
+    controle.parent?.setErrors({
+      ...controle.parent?.errors,
+      invalidCPF: true,
+    });
+    return { invalidCPF: true };
   }
 
-  static MoreThan18YearsOld(controle: AbstractControl) {
+  static MoreThan18YearsOld(
+    controle: AbstractControl,
+  ): ValidationErrors | null {
     if (!controle?.value) {
-      return false;
+      return null;
     }
 
-    const nascimento = controle.value;
-    const [ano, mes, dia] = nascimento.split("-");
+    const nascimento = controle.value as string;
+    const [ano, mes, dia] = nascimento.split("-").map((value) => Number(value));
     const hoje = new Date();
     const dataNascimento = new Date(ano, mes, dia, 0, 0, 0);
     const tempoParaTeste = 1000 * 60 * 60 * 24 * 365 * 18; //18 anos em mili segundos...
@@ -61,18 +68,27 @@ export class CustomValidators {
     if (hoje.getTime() - dataNascimento.getTime() >= tempoParaTeste)
       return null;
 
-    return { menorDeIdade: true };
+    controle.setErrors({ ...controle.errors, lessThan18YearsOld: true });
+    controle.parent?.setErrors({
+      ...controle.parent?.errors,
+      lessThan18YearsOld: true,
+    });
+    return { lessThan18YearsOld: true };
   }
 
-  static SamePassword(controle: AbstractControl) {
-    let senha = controle.get("senha")?.value;
-    let confirmarSenha = controle.get("confirmarSenha")?.value;
+  static SamePassword(controle: AbstractControl): ValidationErrors | null {
+    let senha = controle.get("password")?.value;
+    let confirmarSenha = controle.get("confirmPassword")?.value;
 
     if (senha === confirmarSenha) {
       return null;
     } else {
-      controle.get("confirmarSenha")?.setErrors({ senhasNaoCoincidem: true });
-      return { senhaDiferente: true };
+      controle.setErrors({ ...controle.errors, notSamePassword: true });
+      controle.parent?.setErrors({
+        ...controle.parent?.errors,
+        notSamePassword: true,
+      });
+      return { notSamePassword: true };
     }
   }
 }

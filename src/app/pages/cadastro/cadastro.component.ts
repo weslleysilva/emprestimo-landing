@@ -31,8 +31,18 @@ export class CadastroComponent implements OnInit {
       emailConfirm: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(8)]],
-      canReceiveEmail: [false, [Validators.requiredTrue]],
+      canReceiveEmail: [false],
       acceptedTerms: [false, [Validators.requiredTrue]],
+    });
+
+    // Apagar esta linha
+    this.initialDataForm.patchValue({
+      email: "teste@teste.com",
+      emailConfirm: "teste@teste.com",
+      phone: "27999999999",
+      password: "12345678",
+      canReceiveEmail: false,
+      acceptedTerms: true,
     });
   }
 
@@ -47,6 +57,16 @@ export class CadastroComponent implements OnInit {
       motherFullName: [null, [Validators.required]],
       ownerOfData: [false, [Validators.requiredTrue]],
       allowExternalConsult: [false, [Validators.requiredTrue]],
+    });
+
+    // Apagar esta linha
+    this.consultDataForm.patchValue({
+      cpf: "16131646708",
+      fullName: "Teste do Teste",
+      birthDate: "1999-09-09",
+      motherFullName: "Mãe Teste",
+      ownerOfData: true,
+      allowExternalConsult: true,
     });
   }
 
@@ -64,12 +84,14 @@ export class CadastroComponent implements OnInit {
   initialDataFormSubmit(ngForm: FormGroupDirective) {
     if (this.initialDataForm?.invalid) {
       alert("Preenchimento incorreto");
+      console.log(this.initialDataForm);
     }
   }
 
   consultDataFormSubmit(ngForm: FormGroupDirective) {
     if (this.consultDataForm?.invalid) {
       alert("Preenchimento incorreto");
+      console.log(this.consultDataForm);
     }
   }
 
