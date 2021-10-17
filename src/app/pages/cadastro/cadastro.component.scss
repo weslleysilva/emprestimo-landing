@@ -1,7 +1,13 @@
-.c-create-account {
-  &__form {
+.c-consult-data {
+  &__initial-form {
     &--image {
       width: 300px;
+    }
+  }
+
+  &__consult-form {
+    &--image {
+      width: 225px;
     }
   }
 }

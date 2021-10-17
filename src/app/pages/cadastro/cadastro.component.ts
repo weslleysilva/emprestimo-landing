@@ -1,20 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit } from "@angular/core";
+import { Location } from "@angular/common";
+import {
+  FormBuilder,
+  FormGroup,
+  FormGroupDirective,
+  Validators,
+} from "@angular/forms";
+import { CustomValidators } from "app/validators/custom-validators";
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.scss'],
+  selector: "app-cadastro",
+  templateUrl: "./cadastro.component.html",
+  styleUrls: ["./cadastro.component.scss"],
 })
 export class CadastroComponent implements OnInit {
   initialDataForm?: FormGroup;
-  consultInitialDataForm?: FormGroup;
+  consultDataForm?: FormGroup;
   showPassword: boolean;
   constructor(private _location: Location, private fb: FormBuilder) {
     this.showPassword = false;
     this.initializeInitialDataForm();
-    this.initializeConsultInitialDataForm();
+    this.initializeConsultDataForm();
   }
 
   ngOnInit(): void {}
@@ -25,29 +31,46 @@ export class CadastroComponent implements OnInit {
       emailConfirm: [null, [Validators.required]],
       phone: [null, [Validators.required]],
       password: [null, [Validators.required, Validators.minLength(8)]],
-      canReceiveEmail: [false],
-      acceptedTerms: [false],
+      canReceiveEmail: [false, [Validators.requiredTrue]],
+      acceptedTerms: [false, [Validators.requiredTrue]],
     });
   }
 
-  initializeConsultInitialDataForm() {
-    this.consultInitialDataForm = this.fb.group({
-      cpf: [null, [Validators.required]],
+  initializeConsultDataForm() {
+    this.consultDataForm = this.fb.group({
+      cpf: [null, [Validators.required, CustomValidators.CPF]],
       fullName: [null, [Validators.required]],
-      phone: [null, [Validators.required]],
-      password: [null, [Validators.required, Validators.minLength(8)]],
+      birthDate: [
+        null,
+        [Validators.required, CustomValidators.MoreThan18YearsOld],
+      ],
+      motherFullName: [null, [Validators.required]],
+      ownerOfData: [false, [Validators.requiredTrue]],
+      allowExternalConsult: [false, [Validators.requiredTrue]],
     });
   }
 
   getCurrentPasswordInputType() {
     if (this.showPassword) {
-      return 'text';
+      return "text";
     }
-    return 'password';
+    return "password";
   }
 
   toggleShowPassword() {
     this.showPassword = !this.showPassword;
+  }
+
+  initialDataFormSubmit(ngForm: FormGroupDirective) {
+    if (this.initialDataForm?.invalid) {
+      alert("Preenchimento incorreto");
+    }
+  }
+
+  consultDataFormSubmit(ngForm: FormGroupDirective) {
+    if (this.consultDataForm?.invalid) {
+      alert("Preenchimento incorreto");
+    }
   }
 
   goToBackPage() {

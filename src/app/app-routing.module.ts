@@ -1,49 +1,42 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'cadastro',
+    path: "",
+    pathMatch: "full",
+    redirectTo: "cadastro",
     // loadChildren: () =>
     //   import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'login',
+    path: "login",
     loadChildren: () =>
-      import('./pages/login/login.module').then((m) => m.LoginModule),
+      import("./pages/login/login.module").then((m) => m.LoginModule),
   },
   {
-    path: 'selecionar-tipo-emprestimo',
+    path: "selecionar-tipo-emprestimo",
     loadChildren: () =>
       import(
-        './pages/selecao-tipo-emprestimo/selecao-tipo-emprestimo.module'
+        "./pages/selecao-tipo-emprestimo/selecao-tipo-emprestimo.module"
       ).then((m) => m.SelecaoTipoEmprestimoModule),
   },
   {
-    path: 'simulacao-negada',
+    path: "simulacao-negada",
     loadChildren: () =>
-      import('./pages/simulacao-negada/simulacao-negada.module').then(
-        (m) => m.SimulacaoNegadaModule
+      import("./pages/simulacao-negada/simulacao-negada.module").then(
+        (m) => m.SimulacaoNegadaModule,
       ),
   },
   {
-    path: 'home',
+    path: "home",
     loadChildren: () =>
-      import('./pages/home/home.module').then((m) => m.HomeModule),
+      import("./pages/home/home.module").then((m) => m.HomeModule),
   },
   {
-    path: 'simulacao-negada',
+    path: "cadastro",
     loadChildren: () =>
-      import('./pages/simulacao-negada/simulacao-negada.module').then(
-        (m) => m.SimulacaoNegadaModule
-      ),
-  },
-  {
-    path: 'cadastro',
-    loadChildren: () =>
-      import('./pages/cadastro/cadastro.module').then((m) => m.CadastroModule),
+      import("./pages/cadastro/cadastro.module").then((m) => m.CadastroModule),
   },
 ];
 

@@ -1,9 +1,7 @@
 <app-navbar></app-navbar>
-<section
-  class="c-create-account section-with-fixed-navbar container mx-auto p-4"
->
+<section class="c-consult-data section-with-fixed-navbar container mx-auto p-4">
   <div class="row">
-    <div class="c-create-account__actions col-12 p-0">
+    <div class="c-consult-data__actions col-12 p-0">
       <button
         nbButton
         ghost
@@ -17,14 +15,14 @@
     </div>
   </div>
   <div class="row">
-    <div class="c-create-account__title col-12">
+    <div class="c-consult-data__title col-12">
       <h1 class="mb-1">
         Lorem ipsum dolor sit amet consectetur adipisicing elit.
       </h1>
     </div>
   </div>
   <div class="row">
-    <div class="c-create-account__subtitle col-12">
+    <div class="c-consult-data__subtitle col-12">
       <h6 class="lead-color">
         Obcaecati nostrum nulla sunt minus aut veniam nam adipisci eum a quo
         sequi perspiciatis.
@@ -35,11 +33,16 @@
     <nb-card class="col-12 p-4">
       <nb-card-body>
         <nb-stepper linear disableStepNavigation orientation="horizontal">
-          <nb-step *ngIf="initialDataForm" label="Dados iniciais">
+          <nb-step
+            *ngIf="initialDataForm"
+            label="Dados iniciais"
+            [stepControl]="initialDataForm"
+          >
             <form
               #ngInitialDataForm="ngForm"
               [formGroup]="initialDataForm"
-              class="c-create-account__form row"
+              class="c-consult-data__initial-form row"
+              (ngSubmit)="initialDataFormSubmit(ngInitialDataForm)"
             >
               <!-- Image -->
               <div
@@ -52,8 +55,8 @@
                 "
               >
                 <img
-                  class="c-create-account__form--image"
-                  src="../../../assets/undraw-register-6.svg"
+                  class="c-consult-data__initial-form--image"
+                  src="../../../assets/undraw-register-1.svg"
                   alt="Cadastro"
                 />
               </div>
@@ -81,6 +84,7 @@
                       id="email"
                       formControlName="email"
                       autocomplete="off"
+                      placeholder="ex.: email@provedor.com"
                     />
                   </nb-form-field>
                 </div>
@@ -94,6 +98,7 @@
                       id="emailConfirm"
                       formControlName="emailConfirm"
                       autocomplete="off"
+                      placeholder="ex.: email@provedor.com"
                     />
                   </nb-form-field>
                 </div>
@@ -108,6 +113,7 @@
                       mask="(00) 0 0000-0000"
                       formControlName="phone"
                       autocomplete="off"
+                      placeholder="ex.: (00) 0 0000-0000"
                     />
                   </nb-form-field>
                 </div>
@@ -121,6 +127,7 @@
                       formControlName="password"
                       [type]="getCurrentPasswordInputType()"
                       autocomplete="off"
+                      placeholder="Deve conter letras, números e 8 dígitos"
                     />
                     <button
                       nbSuffix
@@ -169,8 +176,17 @@
               </div>
             </form>
           </nb-step>
-          <nb-step label="Consulta dos dados">
-            <form #ngConsultDataForm="ngForm" class="c-consult-data__form row">
+          <nb-step
+            *ngIf="consultDataForm"
+            label="Consulta dos dados"
+            [stepControl]="consultDataForm"
+          >
+            <form
+              #ngConsultDataForm="ngForm"
+              class="c-consult-data__consult-form row"
+              [formGroup]="consultDataForm"
+              (ngSubmit)="consultDataFormSubmit(ngConsultDataForm)"
+            >
               <!-- Image -->
               <div
                 class="
@@ -182,13 +198,91 @@
                 "
               >
                 <img
-                  class="c-create-account__form--image"
-                  src="../../../assets/undraw-register-6.svg"
+                  class="c-consult-data__consult-form--image"
+                  src="../../../assets/undraw-search-1.svg"
                   alt="Cadastro"
                 />
               </div>
               <!-- Fieldset-->
-              <fieldset class="col-12 col-lg-5 d-flex flex-wrap"></fieldset>
+              <fieldset class="col-12 col-lg-5 d-flex flex-wrap">
+                <div class="col-12 px-2 my-2">
+                  <strong>
+                    Agora, nos informe os dados para consultar sua situação:
+                  </strong>
+                </div>
+                <div class="form-group col-12 px-2 my-2">
+                  <label for="cpf">CPF*:</label>
+                  <nb-form-field>
+                    <input
+                      nbInput
+                      fullWidth
+                      type="text"
+                      id="cpf"
+                      mask="000.000.000-00"
+                      formControlName="cpf"
+                      autocomplete="off"
+                      placeholder="ex.: 000.000.00-00"
+                    />
+                  </nb-form-field>
+                </div>
+                <div class="form-group col-12 px-2 my-2">
+                  <label for="fullName">Nome Completo*:</label>
+                  <nb-form-field>
+                    <input
+                      nbInput
+                      fullWidth
+                      type="text"
+                      id="fullName"
+                      formControlName="fullName"
+                      autocomplete="off"
+                      placeholder="ex.: Fulanx da Silva"
+                    />
+                  </nb-form-field>
+                </div>
+                <div class="form-group col-12 px-2 my-2">
+                  <label for="birthDate">Data de Nascimento*:</label>
+                  <nb-form-field>
+                    <input
+                      nbInput
+                      fullWidth
+                      type="text"
+                      id="birthDate"
+                      mask="00/00/0000"
+                      formControlName="birthDate"
+                      autocomplete="off"
+                      placeholder="ex.: dd/mm/aaaa"
+                    />
+                  </nb-form-field>
+                </div>
+                <div class="form-group col-12 px-2 my-2">
+                  <label for="motherFullName">Nome completo da mãe*:</label>
+                  <nb-form-field>
+                    <input
+                      nbInput
+                      fullWidth
+                      type="text"
+                      id="motherFullName"
+                      mask="00/00/0000"
+                      formControlName="motherFullName"
+                      autocomplete="off"
+                      placeholder="ex.: Fulanx da Silva"
+                    />
+                  </nb-form-field>
+                </div>
+                <div class="form-group col-12 px-2 mt-3">
+                  <nb-checkbox id="ownerOfData" formControlName="ownerOfData">
+                    Confirma que os dados são próprios
+                  </nb-checkbox>
+                </div>
+                <div class="form-group col-12 px-2 mt-3">
+                  <nb-checkbox
+                    id="allowExternalConsult"
+                    formControlName="allowExternalConsult"
+                  >
+                    Permite consulta externas com os dados
+                  </nb-checkbox>
+                </div>
+              </fieldset>
               <div class="form-group col-12 mt-5 d-flex justify-content-end">
                 <button nbButton type="submit" status="primary" nbStepperNext>
                   Realizar Consulta
