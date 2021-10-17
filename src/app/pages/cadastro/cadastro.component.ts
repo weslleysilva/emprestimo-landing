@@ -17,8 +17,11 @@ export class CadastroComponent implements OnInit {
   initialDataForm?: FormGroup;
   consultDataForm?: FormGroup;
   showPassword: boolean;
+  successOnConsult: boolean;
+
   constructor(private _location: Location, private fb: FormBuilder) {
     this.showPassword = false;
+    this.successOnConsult = false;
     this.initializeInitialDataForm();
     this.initializeConsultDataForm();
   }

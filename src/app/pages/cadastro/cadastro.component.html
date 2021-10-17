@@ -291,8 +291,57 @@
             </form>
           </nb-step>
           <nb-step label="Resultado">
+            <!-- Sucesso -->
+            <div *ngIf="successOnConsult" class="row mt-4">
+              <div
+                class="
+                  c-simulation-denied__content
+                  col-12
+                  d-flex
+                  flex-column
+                  justify-content-center
+                  align-items-center
+                  px-4
+                "
+              >
+                <img
+                  class="my-4"
+                  src="../../../assets/undraw-done-2.svg"
+                  alt="simulação-negada"
+                  width="300px"
+                />
+                <div
+                  class="
+                    c-simulation-denied__content--title
+                    d-flex
+                    flex-column
+                    justify-content-center
+                    my-4
+                  "
+                >
+                  <h1 class="text-center">Consulta realizada com sucesso!</h1>
+                  <h6 class="lead-color text-center">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Enim adim ad minimim veniam, quis nostrud exercise
+                    ullamco laboris nisi ut alipip ex ea commodo consequat. Duis
+                    auteur irure pain in reprehenderit in voluptate velit this
+                    cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </h6>
+                  <div
+                    class="alert alert-success mt-5 d-flex aligm-items-center"
+                    role="alert"
+                  >
+                    <nb-icon class="me-2" icon="alert-circle-outline"></nb-icon>
+                    This is a info alert—check it out!
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Negado -->
-            <div class="row mt-4">
+            <div *ngIf="!successOnConsult" class="row mt-4">
               <div
                 class="
                   c-simulation-denied__content
@@ -308,7 +357,7 @@
                   class="my-4"
                   src="../../../assets/undraw-alert.svg"
                   alt="simulação-negada"
-                  width="300px"
+                  width="250px"
                 />
                 <div
                   class="
